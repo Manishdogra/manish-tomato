@@ -9,6 +9,11 @@ exports.loginForm = (req,res) => {
     });
 }
 
+exports.homePage = (req,res) => {
+    res.render('homePage', {
+        title: 'Register'
+    });
+}
 exports.registerForm = (req,res)=> {
     res.render('register', {title: 'Register'})
 }
@@ -24,8 +29,8 @@ exports.validateRegister = (req,res,next) => {
     });
 
     req.checkBody('password', "Passowd cannot be Blank").notEmpty();
-    req.checkBody('password-confirm', "Passowd cannot be Blank").notEmpty();
-    req.checkBody('password-confirm', "Opps! Passowd did't match").equals(req.body.password); 
+    req.checkBody('password-confirm', "Passwordd cannot be Blank").notEmpty();
+    req.checkBody('password-confirm', "Opps! Password did't match").equals(req.body.password); 
 
     const errors = req.validationErrors();
 
