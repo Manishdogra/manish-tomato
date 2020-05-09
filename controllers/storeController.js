@@ -22,6 +22,10 @@ exports.homePage =(req,res)  =>{
     res.render('index');
 }
 
+exports.adminPage =(req,res)  =>{
+    res.render('admin');
+}
+
 exports.addStore = (req,res) =>{
     res.render('editStore', {
         title: 'Add Store'

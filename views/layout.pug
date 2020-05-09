@@ -13,14 +13,14 @@ html
         nav.nav
           .nav__section.nav__section--pages
             li.nav__item
-              a.nav__link.nav__link--logo(href="/")
+              a.nav__link.nav__link--logo(href="/stores")
                 //- != h.icon('logo')
                 img(src="/images/icons/tomatoooo.png", width="50")
-                //- span(style='color:red;background-color:white;letter-spacing:3px;text-decoration:capatilize;') Tomatoo
-                //- each item in h.menu
-                //-   li.nav__item
-                //-     a.nav__link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
-                //-       != h.icon(item.icon)
+                span(style='color:red;background-color:white;letter-spacing:3px;text-decoration:capatilize;') Tomatoo
+                each item in h.menu
+                  li.nav__item
+                    a.nav__link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
+                       != h.icon(item.icon)
                 //-       span #{item.title}
                 //- .nav__section.nav__section--search
                 //-   .search

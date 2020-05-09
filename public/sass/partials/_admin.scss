@@ -1,0 +1,19 @@
+.admin{
+    width: 200px;
+    height: 300px;
+}
+.container2 {
+    display: grid;
+  }
+  
+  .left-half {
+    /* background: #ff9e2c; */
+    grid-column: 1;
+    margin: 48px;
+  }
+  
+  .right-half {
+    /* background: #b6701e; */
+    grid-column: 2;
+    margin: 48px;
+  }
