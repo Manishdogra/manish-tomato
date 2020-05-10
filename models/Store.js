@@ -35,6 +35,15 @@ const storeSchema = new mongoose.Schema(
         required: "You must Supply an Address",
       },
     },
+    approved: {
+      type: Boolean,
+      default: false
+    },
+
+    contactNumber: {
+      type: Number
+    },
+    
     photo: String,
     author: {
       type: mongoose.Schema.ObjectId,

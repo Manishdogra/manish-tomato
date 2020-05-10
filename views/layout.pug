@@ -17,13 +17,19 @@ html
               a.nav__link.nav__link--logo(href="/stores")
                 //- != h.icon('logo')
                 img(src="/images/icons/tomatoooo.png", width="50")
-                span(style='color:red;background-color:white;letter-spacing:3px;text-decoration:capatilize;') Tomatoo
+                span(style='color:red;background-color:white;letter-spacing:3px;text-decoration:capatilize;')
                 if user.isAdmin
                   each item in h.adminMenu
                     li.nav__item
                       a.nav__link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
                         != h.icon(item.icon)
                         span #{item.title}
+                  li.nav__item: a.nav__link(href="/logout", class=(currentPath.startsWith('/logout') ? 'nav__link--active' : ''))
+                        != h.icon('logout')
+                        span Logout
+                  li.nav__item: a.nav__link(href="/account", class=(currentPath.startsWith('/account') ? 'nav__link--active' : ''))
+                      img(src="/images/icons/update.png", width = '30px', style = 'padding-bottom:5px;',) 
+                      span update
                 else
                   each item in h.menu
                     li.nav__item

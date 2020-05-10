@@ -30,7 +30,7 @@ exports.menu = [
 ];
 
 exports.adminMenu = [
-  { slug: "/stores", title: "Stores", icon: "store" },
+  { slug: "/stores", title: "Stores", icon: "open" },
   { slug: "/admin", title: "Allow Stores", icon: "store" },
   { slug: "/user", title: "Users", icon: "tag" },
 ];

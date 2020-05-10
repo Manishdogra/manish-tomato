@@ -5,6 +5,11 @@ mixin storeForm(store = {})
         input(type="text", name="name" value=store.name)
         label(for='name') Description
         textarea(name="description")= store.description
+        
+        //contact number
+
+        label(for='contact') contact
+        input(type="tel", name="contact" value=store.contactNumber)
         //-image
         label(for="photo") Photo
             input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
