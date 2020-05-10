@@ -13,15 +13,14 @@ html
         nav.nav
           .nav__section.nav__section--pages
             li.nav__item
-              a.nav__link.nav__link--logo(href="/stores")
+              a.nav__link.nav__link--logo(href="/")
                 //- != h.icon('logo')
-                img(src="/images/icons/tomatoooo.png", width="50")
-                span(style='color:red;background-color:white;letter-spacing:3px;text-decoration:capatilize;') Tomatoo
+                img(src="/images/icons/tomatoooo.png", width="70")
                 each item in h.menu
                   li.nav__item
                     a.nav__link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
                        != h.icon(item.icon)
-                //-       span #{item.title}
+                //-       span #{item.title}  
                 //- .nav__section.nav__section--search
                 //-   .search
                 //-     input.search__input(type="text" placeholder="Search for resturant here..." name="search")
@@ -38,9 +37,7 @@ html
                       img.avatar(src=user.gravatar)  
                       //+ &d=retro
                   else
-                    li.nav__item: a.nav__link(href="/register", class=(currentPath.startsWith('/register') ? 'nav__link--active' : '')) Register
-                    li.nav__item: a.nav__link(href="/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Log In
-                    li.nav__item: a.nav__link(href="/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Admin Login
+                    li.nav__item: a.nav__link(href="/admin", class=(currentPath.startsWith('/admin') ? 'nav__link--active' : '')) Admin Login
     block messages
       if locals.flashes
         .inner
@@ -54,6 +51,6 @@ html
     .content
       block content
 
-    block scripts
-      script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
-      script(src="/dist/App.bundle.js")
+    //- block scripts
+    //-   script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
+    //-   script(src="/dist/App.bundle.js")
