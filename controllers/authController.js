@@ -3,6 +3,7 @@ const crypto = require("crypto");
 const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const promisfy = require("es6-promisify");
+const Store = require("../models/Store");
 const mail = require("../handlers/mail");
 
 exports.login = passport.authenticate("local", {
@@ -25,6 +26,25 @@ exports.isLoggedIn = (req, res, next) => {
   }
   req.flash("error", "You Must be Logged in to Do that");
   res.redirect("/login");
+};
+
+exports.adminPage = async (req, res) => {
+  const page = req.params.page || 1;
+  const limit = 6;
+  const skip = page * limit - limit;
+  const storesPromise = Store.find()
+    .skip(skip)
+    .limit(limit)
+    .sort({ created: "desc" });
+  // console.log(stores);
+
+  const countPromise = Store.count();
+
+  const [stores, count] = await Promise.all([storesPromise, countPromise]);
+
+  const pages = Math.ceil(count / limit);
+
+  res.render("admin", { title: "Stores", stores, page, pages, count });
 };
 
 exports.forgot = async (req, res) => {
