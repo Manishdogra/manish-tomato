@@ -1,20 +1,28 @@
-import '../sass/style.scss';
+import "../sass/style.scss";
 
-import { $, $$ } from './modules/bling';
+import { $, $$ } from "./modules/bling";
 
-import autocomplete from './modules/autocomplete';
+import autocomplete from "./modules/autocomplete";
 
-import typeAhead from './modules/typeAhead';
+import typeAhead from "./modules/typeAhead";
 
-import makeMap from './modules/map'
+import makeMap from "./modules/map";
 
-import ajaxHeart from './modules/heart';
+import ajaxHeart from "./modules/heart";
+import ajaxDelte from "./modules/ajaxDelete";
 
-autocomplete($('#address'), $('#lat'), $('#lng'));
+autocomplete($("#address"), $("#lat"), $("#lng"));
 
-typeAhead($('.search'));
+typeAhead($(".search"));
 
-makeMap($('#map'));
+makeMap($("#map"));
 
-const heartForms = $$('form.heart');
-heartForms.on('submit', ajaxHeart); 
+const heartForms = $$("form.heart");
+const removeDoc = $$(".remove-doc");
+removeDoc.on("click", ajaxDelte);
+// removeDoc.addEventListener("click", () => {
+//     var userId = removeDoc[0].getAttribute("data-id");
+
+//   console.log("yoo", removeDoc[0].getAttribute("data-id"));
+// });
+heartForms.on("submit", ajaxHeart);

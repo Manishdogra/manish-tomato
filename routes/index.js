@@ -17,6 +17,8 @@ router.get("/add", authController.isLoggedIn, storeController.addStore);
 //Admin Panel
 router.get("/admin", authController.adminPage);
 
+router.post("/data", reviewController.deleteReview);
+
 router.post(
   "/add",
   storeController.upload,

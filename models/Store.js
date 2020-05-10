@@ -37,13 +37,13 @@ const storeSchema = new mongoose.Schema(
     },
     approved: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
-    contactNumber: {
-      type: Number
+    contact: {
+      type: Number,
     },
-    
+
     photo: String,
     author: {
       type: mongoose.Schema.ObjectId,

@@ -9,3 +9,14 @@ mixin review(review)
     time.review__time(datetime=review.created)= h.moment(review.created).fromNow()
   .review__body
     p= review.text
+    if review.author.isAdmin
+      button.remove-doc(data-id=review) X
+
+
+  //- script(type="text/javascript").
+  //-   let bt = document.querySelector('.remove-doc')
+  //-   bt.addEventListener('click', () => {
+  //-     var userId = bt.getAttribute('data-id')
+
+  //-     console.log('yoo', userId)
+  //-   })

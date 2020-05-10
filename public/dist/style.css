@@ -980,7 +980,7 @@ label {
   .review:before {
     width: 5px;
     left: 0;
-    content: '';
+    content: "";
     display: block;
     background: linear-gradient(0, #48ded4 0%, #a026bf 20%, #e82c75 60%, #FFC40E 85%, #48ded4 95%);
     position: absolute;
@@ -1017,7 +1017,11 @@ label {
   .review__stars {
     color: #FFC40E; }
   .review__body {
-    padding: 2rem; }
+    padding: 2rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
   .review p {
     white-space: pre-wrap; }
 
@@ -1044,7 +1048,7 @@ label {
            This is fine for accessibility because our labels have for()
          */ }
         .reviewer__stars input + label:before {
-          content: '\2605';
+          content: "\2605";
           font-size: 2rem; }
         .reviewer__stars input + label[for="star5"] {
           -ms-flex-order: 5;
@@ -1061,7 +1065,8 @@ label {
         .reviewer__stars input + label[for="star1"] {
           -ms-flex-order: 1;
               order: 1; }
-        .reviewer__stars input + label:hover, .reviewer__stars input + label:hover ~ label {
+        .reviewer__stars input + label:hover,
+        .reviewer__stars input + label:hover ~ label {
           color: #ffdd74; }
   .reviewer textarea {
     border: 0;
@@ -1080,6 +1085,13 @@ label {
     .reviewer__meta > * {
       -ms-flex: 1;
           flex: 1; }
+
+.reviewer2 {
+  position: relative;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  margin-top: 48px;
+  padding: 30px; }
 
 .pagination {
   display: -ms-flexbox;
