@@ -25,11 +25,11 @@ html
                         != h.icon(item.icon)
                         span #{item.title}
                   li.nav__item: a.nav__link(href="/logout", class=(currentPath.startsWith('/logout') ? 'nav__link--active' : ''))
-                        != h.icon('logout')
-                        span Logout
+                    != h.icon('logout')
+                    span Logout
                   li.nav__item: a.nav__link(href="/account", class=(currentPath.startsWith('/account') ? 'nav__link--active' : ''))
-                      img(src="/images/icons/update.png", width = '30px', style = 'padding-bottom:5px;',) 
-                      span update
+                    img(src="/images/icons/update.png", width = '30px', style = 'padding-bottom:5px;',) 
+                    span update
                 else
                   each item in h.menu
                     li.nav__item
@@ -57,8 +57,9 @@ html
                       //-   li.nav__item: a.nav__link(href="/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Log In
                       //-   li.nav__item: a.nav__link(href="/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Admin Login
     else 
-      img(src="/images/icons/tomatoooo.png", width="100px" height="100px")    
-      a(href="/login") tomato
+      .headee
+        img(src="/images/icons/tomatoooo.png", width="100px" height="100px")    
+        a(href="/login", class='text2') tomato
     block messages
       if locals.flashes
         .inner

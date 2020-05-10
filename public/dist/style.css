@@ -35,6 +35,18 @@ body {
       grid-column: 2;
   margin: 48px; }
 
+.headee {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly; }
+
+.text2 {
+  font-size: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center; }
+
 html {
   box-sizing: border-box; }
 

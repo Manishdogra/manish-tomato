@@ -1011,6 +1011,8 @@ function ajaxDelete(e) {
   _axios2.default.post("/data/", {
     reviewId: _id,
     store: store
+  }).then(function (res) {
+    return location.reload(true / false);
   });
 }
 
