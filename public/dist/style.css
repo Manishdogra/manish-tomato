@@ -659,10 +659,12 @@ label {
     transition: transform 0.2s;
     border-bottom: 5px solid transparent; }
     .nav__link svg {
-      width: 20px;
+      width: 35px;
       transition: all 0.2s;
       fill: white;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      -ms-flex-preferred-size: content;
+          flex-basis: content; }
     .nav__link:hover, .nav__link--active {
       border-bottom-color: rgba(0, 0, 0, 0.2);
       border-right-color: rgba(0, 0, 0, 0.05);

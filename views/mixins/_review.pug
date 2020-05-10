@@ -1,4 +1,5 @@
 mixin review(review)
+ pre= h.dump(review)
   .review__header
     .review__author
       img.avatar(src=review.author.gravatar)
@@ -9,7 +10,7 @@ mixin review(review)
     time.review__time(datetime=review.created)= h.moment(review.created).fromNow()
   .review__body
     p= review.text
-    if review.author.isAdmin
+    if user.isAdmin
       button.remove-doc(data-id=review) X
 
 

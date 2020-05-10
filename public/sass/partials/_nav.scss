@@ -28,10 +28,11 @@
     transition: transform 0.2s;
     border-bottom: 5px solid transparent;
     svg {
-      width: 20px;
+      width: 35px;
       transition: all 0.2s;
       fill: white;
       margin-bottom: 1rem;
+      flex-basis: content;
     }
     &:hover, &--active {
       border-bottom-color: rgba(0,0,0,0.2);
