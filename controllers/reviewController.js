@@ -20,5 +20,6 @@ exports.deleteReview = async (req, res) => {
   //   console.log(findStore.slug);
   //   let url = `/store/${findStore.slug}`;
   await Review.findByIdAndDelete(reviewId);
+  res.redirect(req.get("referer"));
   req.flash("success", "Review Saved!!");
 };
