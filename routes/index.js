@@ -6,6 +6,7 @@ const authController = require("../controllers/authController");
 const reviewController = require("../controllers/reviewController");
 const { catchErrors } = require("../handlers/errorHandlers");
 
+router.get("/user", userController.userList);
 // Do work here
 //router.get('/', catchErrors(storeController.getStores));
 router.get("/", authController.isLoggedIn, userController.homePage);

@@ -18,6 +18,10 @@ exports.registerForm = (req,res)=> {
     res.render('register', {title: 'Register'})
 }
 
+exports.userList = async (req,res) => {
+    const allUser = await User.find()
+    res.render('userList', {allUser})
+}
 exports.validateRegister = (req,res,next) => {
     req.sanitizeBody('name');
     req.checkBody('name', 'You must Supply a name!').notEmpty();

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+
+    .inner
+        h2 user
+        table.table
+            thead
+                td name
+                td email
+                td action
+
+            each user in allUser
+                tr
+                    td= user.name
+                    td= user.email
+                    td  delete
