@@ -15,7 +15,9 @@ label {
 }
 
 .form {
-  background: white;
+  background: #252422;
+  border-radius: 20px;
+  color: lime;
   padding: 2rem;
   box-shadow: $grad;
   & + .form {

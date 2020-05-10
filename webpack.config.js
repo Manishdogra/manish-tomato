@@ -63,6 +63,7 @@ const config = {
     // name will be `App` because that is what we used above in our entry
     filename: '[name].bundle.js'
   },
+  
 
   // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
   module: {
