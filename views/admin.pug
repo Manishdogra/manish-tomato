@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  pre= h.dump(stores)
+    .inner
+      h2 Top #{stores.length} Stores
+      table.table
+        thead
+          td photo
+          td name
+          td reviews
+          td Store Status 
+        each store,i in stores
+          tr
+            td
+              a(href=`/store/${store.slug}`)
+                img(width=200 src=`/uploads/${store.photo || store.png}` alt=store.name)
+            td: a(href=`/store/${store.slug}`)= store.name
+            td= store.reviews.length
+            td
+              form.heart(method="POST" action=`/api/stores/${store._id}/heart`)
+                - const heartStrings = user.hearts.map(obj => obj.toString())
+                - const heartClass = heartStrings.includes(store._id.toString()) ? 'heart__button--hearted' : ''
+                //- pre= h.dump(heartStrings)
+                //- pre= h.dump(store._id)
+                button.heart__button(type="submit" name="heart" class=heartClass)
+                  != h.icon('heart')
