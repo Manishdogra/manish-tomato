@@ -19,7 +19,7 @@ exports.staticMap = ([lng, lat]) =>
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-exports.siteName = `Tomatooo`;
+exports.siteName = `Tomato`;
 
 exports.menu = [
   { slug: "/stores", title: "Stores", icon: "store" },
@@ -27,10 +27,15 @@ exports.menu = [
   { slug: "/top", title: "Top", icon: "top" },
   { slug: "/add", title: "Add", icon: "add" },
   { slug: "/map", title: "Map", icon: "map" },
+  { slug: "/hearts", title: "likes", icon: "heart" },
+  { slug: "/account", title: "account", icon: "update" },
+  { slug: "/logout", title: "logout", icon: "logout" },
 ];
 
 exports.adminMenu = [
   { slug: "/stores", title: "Stores", icon: "open" },
   { slug: "/admin", title: "Allow Stores", icon: "store" },
   { slug: "/user", title: "Users", icon: "tag" },
+  { slug: "/account", title: "update", icon: "update" },
+  { slug: "/logout", title: "Logout", icon: "logout" },
 ];

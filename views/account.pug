@@ -3,8 +3,8 @@ extends layout
 block content
     .inner
         h2 Hey 
-              span.text-by-me #{user.name}&nbsp;
-                                          Edit You account
+              span.text-by-me #{user.name}
+
         form(action='/account' method="POST")
             label(for='name') Name
             input(type="text", name="name" value=user.name)

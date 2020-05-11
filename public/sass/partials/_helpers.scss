@@ -5,10 +5,20 @@
 
 .button {
   border: 0;
-  background: #D244BC;
-  color: $black;
+  background: rgb(220, 20, 60);
+  color: black;
   font-family: 'Panama';
   font-weight: 600;
+  margin-top: 20px;
+  box-shadow: 0px 0px 15px inset;
+}
+
+.button:hover {background-color: rgb(190, 33, 33)}
+
+.button:active {
+  background-color: rgb(233, 6, 52);
+  box-shadow: 0 0 #666;
+  transform: translateY(1px);
 }
 
 .avatar {
@@ -19,7 +29,7 @@
 }
 
 .card {
-  background: white;
+  background: darkcyan;
   padding: 5rem;
   box-shadow: 0 1px 10px rgba(0,0,0,0.15);
 }

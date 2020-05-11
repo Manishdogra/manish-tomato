@@ -4,6 +4,7 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  
 }
 
 img {
@@ -191,7 +192,8 @@ mark {
  * Add the correct font size in all browsers.
  */
 
-small {
+small {border-radius: 50px;
+  background: orange;
   font-size: 80%;
 }
 
