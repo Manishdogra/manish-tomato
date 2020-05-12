@@ -38,13 +38,10 @@ exports.adminPage = async (req, res) => {
     .sort({ created: "desc" });
   // console.log(stores);
 
-  const countPromise = Store.count();
+  const stores = await storesPromise;
 
-  const [stores, count] = await Promise.all([storesPromise, countPromise]);
 
-  const pages = Math.ceil(count / limit);
-
-  res.render("admin", { title: "Stores", stores, page, pages, count });
+  res.render("allowStores", { title: "allow stores", stores });
 };
 
 exports.forgot = async (req, res) => {

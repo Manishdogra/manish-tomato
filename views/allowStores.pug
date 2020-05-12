@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .inner
+        h2 Allow stores
+        //pre= h.dump(stores)
+        table.table
+       
+            tr
+                th S no.
+                th Name
+                th Address
+                th Aprroved
+                th Action
+
+                
+                
+
+            each store,i in stores
+                tr
+                    td= (i + 1)
+                    td= store.name
+                    td= store.location.address
+                    - const val = store.approved ? 'Yes' : 'No'
+                    td= val
+                    td   
+                        .approve
+                            a(href=`/stores/${store._id}/edit`)
+                            != h.icon('check')
+                    

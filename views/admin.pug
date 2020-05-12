@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  pre= h.dump(stores)
+  
     .inner
       h2 Top #{stores.length} Stores
       table.table
@@ -23,5 +23,5 @@ block content
                 - const heartClass = heartStrings.includes(store._id.toString()) ? 'heart__button--hearted' : ''
                 //- pre= h.dump(heartStrings)
                 //- pre= h.dump(store._id)
-                button.heart__button(type="submit" name="heart" class=heartClass)
-                  != h.icon('heart')
+                button.heart__button(type="submit" name="check" class=heartClass)
+                  != h.icon('check')

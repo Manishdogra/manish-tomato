@@ -20,6 +20,14 @@ makeMap($("#map"));
 const heartForms = $$("form.heart");
 const removeDoc = $$(".remove-doc");
 removeDoc.on("click", ajaxDelte);
+
+const deleteUser = $$(".delete")
+deleteUser.on("click",  () => {
+    console.log(deleteUser)
+    var userId = deleteUser.getAttribute('data-id');
+    
+      console.log("yoo",userId);
+    });
 // removeDoc.addEventListener("click", () => {
 //     var userId = removeDoc[0].getAttribute("data-id");
 

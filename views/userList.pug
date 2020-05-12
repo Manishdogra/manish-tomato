@@ -1,18 +1,28 @@
 extends layout
 
+mixin buttons(id)
+    button.delete(data-id=id)
+      != h.icon('unchecked')
+
+
 block content
 
 
     .inner
-        h2 user
+        h2 users
         table.table
-            thead
-                td name
-                td email
-                td action
+            tr
+                th S no.
+                th Name
+                th E-mail
+                th Delete
+                th id
 
-            each user in allUser
+            each user,i in allUser
                 tr
+                    td= (i + 1)
                     td= user.name
                     td= user.email
-                    td  delete
+                    td  
+                        +buttons(user._id)                        
+                    td= user._id

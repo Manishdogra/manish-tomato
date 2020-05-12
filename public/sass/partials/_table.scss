@@ -1,20 +1,25 @@
 .table {
-  width: 100%;
-  td {
-    padding: 5px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 100px;
   }
-  tr:nth-child(even) {
-    background: white;
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
   }
-  tr:nth-child(odd):not(:first-child) {
-    background: #f7f7f7;
+  
+  tr:nth-child(even){background-color: coral}
+  tr:nth-child(odd){background-color: cyan}
+  
+  th {
+    background-color: #dbdbdb;
+    color: black;
   }
-  thead tr {
-    background: $black;
-    color: white;
-  }
-}
+
 
 .container {
   background-color: red($color: #ff0000);
 }
+

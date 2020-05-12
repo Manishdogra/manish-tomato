@@ -491,7 +491,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Panama';
   font-weight: 600;
   letter-spacing: -1px;
-  color: lime; }
+  color: lime;
+  text-shadow: 0px 0px 5px black; }
 
 a {
   text-decoration: none;
@@ -760,16 +761,24 @@ label {
     margin-right: 1rem; } }
 
 .table {
-  width: 100%; }
-  .table td {
-    padding: 5px; }
-  .table tr:nth-child(even) {
-    background: white; }
-  .table tr:nth-child(odd):not(:first-child) {
-    background: #f7f7f7; }
-  .table thead tr {
-    background: #303030;
-    color: white; }
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 100px; }
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black; }
+
+tr:nth-child(even) {
+  background-color: coral; }
+
+tr:nth-child(odd) {
+  background-color: cyan; }
+
+th {
+  background-color: #dbdbdb;
+  color: black; }
 
 .container {
   background-color: 255; }
@@ -852,6 +861,14 @@ label {
     object-fit: cover;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+
+.approve svg {
+  width: 25px;
+  height: 25px; }
+
+.delete svg {
+  width: 25px;
+  height: 25px; }
 
 .tags {
   margin: 0;
@@ -1139,7 +1156,7 @@ label {
   background: orange;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
+  box-shadow: 0px 0px 10px black; }
   .pagination__next {
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;

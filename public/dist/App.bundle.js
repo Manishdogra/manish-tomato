@@ -2043,6 +2043,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var heartForms = (0, _bling.$$)("form.heart");
 var removeDoc = (0, _bling.$$)(".remove-doc");
 removeDoc.on("click", _ajaxDelete2.default);
+
+var deleteUser = (0, _bling.$$)(".delete");
+deleteUser.on("click", function () {
+    console.log(deleteUser);
+    var userId = deleteUser.getAttribute('data-id');
+
+    console.log("yoo", userId);
+});
 // removeDoc.addEventListener("click", () => {
 //     var userId = removeDoc[0].getAttribute("data-id");
 
