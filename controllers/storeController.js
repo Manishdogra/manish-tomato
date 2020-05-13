@@ -15,7 +15,7 @@ const multerOptions = {
     } else {
       next({ message: "That filetype isn't allowed!" }, false);
     }
-  },
+  }
 };
 
 exports.homePage = (req, res) => {
@@ -24,7 +24,7 @@ exports.homePage = (req, res) => {
 
 exports.addStore = (req, res) => {
   res.render("editStore", {
-    title: "Add Store",
+    title: "Add Store"
   });
 };
 
@@ -36,6 +36,7 @@ exports.resize = async (req, res, next) => {
     next(); // skip to the next middleware
     return;
   }
+
   const extension = req.file.mimetype.split("/")[1];
   req.body.photo = `${uuid.v4()}.${extension}`;
   // now we resize
@@ -96,7 +97,7 @@ exports.updateStore = async (req, res) => {
   req.body.location.type = "Point";
   const store = await Store.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true,
-    runValidators: true,
+    runValidators: true
   }).exec();
   req.flash(
     "success",
@@ -113,7 +114,7 @@ exports.getStoreBySlug = async (req, res, next) => {
   if (!store) return next();
   res.render("store", {
     store,
-    title: store.name,
+    title: store.name
   });
 };
 
@@ -135,7 +136,7 @@ exports.getStoresByTag = async (req, res) => {
     tags,
     title: "Tags",
     tag,
-    stores,
+    stores
   });
 };
 
@@ -143,8 +144,8 @@ exports.searchStores = async (req, res) => {
   // res.json(req.query);
   const stores = await Store.find({
     $text: {
-      $search: req.query.q,
-    },
+      $search: req.query.q
+    }
   }).limit(5);
   res.json(stores);
 };
@@ -163,11 +164,11 @@ exports.mapStores = async (req, res) => {
       $near: {
         $geometry: {
           type: "Point",
-          coordinates,
+          coordinates
         },
-        $maxDistance: 10000, //10km
-      },
-    },
+        $maxDistance: 10000 //10km
+      }
+    }
   };
 
   const stores = await Store.find(quer)
@@ -181,7 +182,7 @@ exports.mapPage = (req, res) => {
 };
 
 exports.heartStore = async (req, res) => {
-  const hearts = req.user.hearts.map((obj) => obj.toString());
+  const hearts = req.user.hearts.map(obj => obj.toString());
   const operator = hearts.includes(req.params.id) ? "$pull" : "$addToSet";
   const user = await User.findByIdAndUpdate(
     req.user._id,
@@ -194,7 +195,7 @@ exports.heartStore = async (req, res) => {
 
 exports.getHearts = async (req, res) => {
   const stores = await Store.find({
-    _id: { $in: req.user.hearts },
+    _id: { $in: req.user.hearts }
   });
   res.render("stores", { title: "Favourite Stores", stores });
 };

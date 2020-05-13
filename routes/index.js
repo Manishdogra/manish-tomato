@@ -22,6 +22,7 @@ router.post("/data", reviewController.deleteReview);
 router.post(
   "/add",
   storeController.upload,
+  catchErrors(storeController.resize),
   catchErrors(storeController.createStore)
 );
 
